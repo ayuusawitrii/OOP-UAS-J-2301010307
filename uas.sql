@@ -1,31 +1,24 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 30 Jun 2025 pada 11.05
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.2.12
+/*
+SQLyog Community v13.2.1 (64 bit)
+MySQL - 10.4.32-MariaDB : Database - uas
+*********************************************************************
+*/
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+/*!40101 SET NAMES utf8 */;
 
+/*!40101 SET SQL_MODE=''*/;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`uas` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 
---
--- Database: `uas`
---
+USE `uas`;
 
--- --------------------------------------------------------
+/*Table structure for table `uas` */
 
---
--- Struktur dari tabel `uas`
---
+DROP TABLE IF EXISTS `uas`;
 
 CREATE TABLE `uas` (
   `kode_produk` varchar(10) NOT NULL,
@@ -33,27 +26,16 @@ CREATE TABLE `uas` (
   `kategori` varchar(50) NOT NULL,
   `merek` varchar(50) NOT NULL,
   `stok` int(11) NOT NULL,
-  `harga` double NOT NULL
+  `harga` double NOT NULL,
+  PRIMARY KEY (`kode_produk`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data untuk tabel `uas`
---
+/*Data for the table `uas` */
 
-INSERT INTO `uas` (`kode_produk`, `nama_produk`, `kategori`, `merek`, `stok`, `harga`) VALUES
-('0001', 'Kipas murah', 'Kipas', 'miti', 50, 2000000);
+insert  into `uas`(`kode_produk`,`nama_produk`,`kategori`,`merek`,`stok`,`harga`) values 
+('0001','Kipas murah','Kipas','miti',50,2000000);
 
---
--- Indexes for dumped tables
---
-
---
--- Indeks untuk tabel `uas`
---
-ALTER TABLE `uas`
-  ADD PRIMARY KEY (`kode_produk`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
